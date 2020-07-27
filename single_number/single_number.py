@@ -4,8 +4,16 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
-
-    pass
+    first = 0
+    last = len(arr) - 1
+    while first != last:
+        temp = arr.copy()
+        temp_removed = temp.pop(first)
+        if temp_removed in temp:
+            temp.insert(first, temp_removed)
+            first += 1
+        else:
+            return temp_removed
 
 
 if __name__ == '__main__':

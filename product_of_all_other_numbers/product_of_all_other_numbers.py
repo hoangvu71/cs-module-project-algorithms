@@ -3,9 +3,22 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
+    first = 0
+    last = len(arr) - 1
+    new_arr = []
 
-    pass
+    def multiplyNums(arr):
+        temp = 1
+        temp_arr = arr.copy()
+        temp_arr.pop(first)
+        for num in temp_arr:
+            temp = temp * num
+        return temp
+
+    while first <= last:
+        new_arr.append(multiplyNums(arr))
+        first += 1
+    return new_arr
 
 
 if __name__ == '__main__':

@@ -4,9 +4,16 @@ Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
     # Your code here
-
-    pass
-
+    first = 0
+    last = len(nums) - 1
+    array = []
+    def findMaxWindow(arr):
+        return max(arr)
+    while first <= last - (k -1):
+        new_arr = nums[first: first + k]
+        array.append(findMaxWindow(new_arr))
+        first += 1
+    return array
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 
